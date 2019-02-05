@@ -35,3 +35,29 @@ additional things:
   so you'll need to configure CiviCRM's "Resource URL" to point to the URL that
   will reach that directory.
 
+## Installing CiviCRM
+
+After getting the code using the command-line above, and doing the normal
+Drupal 8 installation, perform the following steps to install CiviCRM:
+
+1. Ensure the `web/sites/default` directory is writeable. On the command-line:
+
+    ```
+    chmod +w web/sites/default
+    ```
+
+2. Enable the CiviCRM module. On the command-line:
+
+    ```
+    drush en -y civicrm
+    ```
+
+3. If you were already logged into the Drupal site, then logout and log back in
+   again. This is to work around bug
+   [CRM-19878](https://issues.civicrm.org/jira/browse/crm-19878).
+
+4. Change the "Resource URL" to `[cms.root]/libraries/civicrm`. You can do this
+   by visiting the path http://example.com/civicrm/admin/setting/url?reset=1
+   (replacing example.com with your real site name).
+
+5. Clearing caches.
