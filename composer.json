@@ -1,6 +1,6 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "roundearth/drupal-civicrm-project",
+    "description": "Project template for Drupal projects with CiviCRM",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -9,14 +9,19 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "zetacomponents-mail": {
+            "type": "vcs",
+            "url": "https://github.com/civicrm/zetacomponents-mail.git"
         }
-    ],
+    },
     "require": {
         "php": ">=5.6",
+        "civicrm/civicrm-drupal-8": "dev-master",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -37,11 +42,14 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "autoloader-suffix": "Drupal8"
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php"
+            "scripts/composer/ScriptHandler.php",
+            "scripts/civicrm/ScriptHandler.php"
         ],
         "files": ["load.environment.php"]
     },
@@ -53,10 +61,12 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\civicrm\\ScriptHandler::buildCivicrm"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\civicrm\\ScriptHandler::buildCivicrm"
         ]
     },
     "extra": {
