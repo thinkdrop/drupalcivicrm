@@ -14,9 +14,12 @@ The documentation here is going to be focused on CiviCRM!
 
 You need a couple of dependencies first:
 
-- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) (at a relatively recent version)
 - [Bower](https://bower.io/#install-bower)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+*Make sure that you have a recent version of Composer! A couple of people have
+tried to use this plugin with older versions and have experienced issues.*
 
 After that you can create your new project via:
 
