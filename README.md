@@ -61,3 +61,27 @@ Drupal 8 installation, perform the following steps to install CiviCRM:
    (replacing example.com with your real site name).
 
 5. Clearing caches.
+
+## How does it work?
+
+It's basically 'drupal-composer/drupal-project' with a special Composer plugin
+added, which does all the additional steps for CiviCRM. So, if you want to
+understand its behavior or contribute, see the Composer plugin:
+
+[https://gitlab.com/roundearth/civicrm-composer-plugin](https://gitlab.com/roundearth/civicrm-composer-plugin)
+
+Specifically, it's this file that does all the real work:
+
+[https://gitlab.com/roundearth/civicrm-composer-plugin/blob/master/src/Handler.php](https://gitlab.com/roundearth/civicrm-composer-plugin/blob/master/src/Handler.php)
+
+## How to add CiviCRM to an existing Drupal 8 site?
+
+Assuming your Drupal 8 site is based on 'drupal-composer/drupal-project', you
+can simply add the special Composer plugin for CiviCRM:
+
+[https://gitlab.com/roundearth/civicrm-composer-plugin](https://gitlab.com/roundearth/civicrm-composer-plugin)
+
+## References
+
+- [https://www.mydropwizard.com/blog/better-way-install-civicrm-drupal-8](https://www.mydropwizard.com/blog/better-way-install-civicrm-drupal-8)
+
