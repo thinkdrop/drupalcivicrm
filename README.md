@@ -19,7 +19,7 @@ You need a couple of dependencies first:
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 *Make sure that you have a recent version of Composer! A couple of people have
-tried to use this plugin with older versions and have experienced issues.*
+tried to use this project with older versions and have experienced issues.*
 
 After that you can create your new project via:
 
